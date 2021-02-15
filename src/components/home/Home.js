@@ -11,10 +11,17 @@ function Home()
         { author: "shadow", title: "Blog 4", content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, a.", id: 4 },
     ]);
 
+
+    function deleteBlog(id)
+    {
+        const new_blogs = blogs.filter(blog => blog.id !== id);
+        setBlogs(new_blogs);
+    }
+
     return (
         <div className="home">
             <div className="blog-list">
-                {blogs.map(blog => <Blog blog={blog} key={blog.id} />)}
+                {blogs.map(blog => <Blog blog={blog} key={blog.id} deleteBlog={deleteBlog} />)}
             </div>
         </div>
     );
