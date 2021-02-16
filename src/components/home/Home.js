@@ -40,18 +40,12 @@ function Home()
         setErrorMessage(null);
     }
 
-    function deleteBlog(id)
-    {
-        const new_blogs = blogs.filter(blog => blog.id !== id);
-        setBlogs(new_blogs);
-    }
-
     return (
         <div className="home">
             <div className="blog-list">
                 {error_message && <div>{error_message}</div>}
                 {pending && <div>Loading...</div>}
-                {blogs && blogs.map(blog => <Blog blog={blog} key={blog.id} deleteBlog={deleteBlog} />)}
+                {blogs && blogs.map(blog => <Blog blog={blog} key={blog.id} />)}
             </div>
         </div>
     );
