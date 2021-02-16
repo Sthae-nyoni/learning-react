@@ -5,14 +5,21 @@ import Blog from "../blogs/Blog";
 function Home()
 {
     const [blogs, setBlogs] = useState(null);
-    
+    const [pending, setPending] = useState(true);
+
     useEffect(() => getBlogs(), []);
 
     function getBlogs()
     {
-        fetch("http://localhost:8000/blogs")
+        setTimeout(() => fetch("http://localhost:8000/blogs")
             .then(response => response.json())
-            .then(data => setBlogs(data));
+            .then(data => updateState(data)), 1000);
+    }
+
+    function updateState(data)
+    {
+        setBlogs(data);
+        setPending(false);
     }
 
     function deleteBlog(id)
@@ -23,6 +30,7 @@ function Home()
 
     return (
         <div className="home">
+            {pending && <div>Loading...</div>}
             <div className="blog-list">
                 {blogs && blogs.map(blog => <Blog blog={blog} key={blog.id} deleteBlog={deleteBlog} />)}
             </div>
