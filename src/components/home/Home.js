@@ -6,20 +6,38 @@ function Home()
 {
     const [blogs, setBlogs] = useState(null);
     const [pending, setPending] = useState(true);
+    const [error_message, setErrorMessage] = useState(null);
 
     useEffect(() => getBlogs(), []);
 
     function getBlogs()
     {
         setTimeout(() => fetch("http://localhost:8000/blogs")
-            .then(response => response.json())
-            .then(data => updateState(data)), 1000);
+            .then(response => process(response))
+            .then(data => updateOkStatus(data))
+            .catch(error => updateErrorStatus(error)), 1000);
     }
 
-    function updateState(data)
+
+    function process(response)
+    {
+        if (!response.ok)
+            throw Error("That endpoint does not exist");
+        return response.json();
+    }
+
+    function updateErrorStatus(error)
+    {
+        setErrorMessage(error.message);
+        setPending(false);
+        setBlogs(null);
+    }
+
+    function updateOkStatus(data)
     {
         setBlogs(data);
         setPending(false);
+        setErrorMessage(null);
     }
 
     function deleteBlog(id)
@@ -30,8 +48,9 @@ function Home()
 
     return (
         <div className="home">
-            {pending && <div>Loading...</div>}
             <div className="blog-list">
+                {error_message && <div>{error_message}</div>}
+                {pending && <div>Loading...</div>}
                 {blogs && blogs.map(blog => <Blog blog={blog} key={blog.id} deleteBlog={deleteBlog} />)}
             </div>
         </div>
