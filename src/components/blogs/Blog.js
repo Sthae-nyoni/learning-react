@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 function Blog({ blog, deleteBlog })
 {
     return (

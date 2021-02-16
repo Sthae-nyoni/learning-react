@@ -1,0 +1,16 @@
+{
+    "blogs": [
+        {
+            "author": "Mario",
+            "title": "Mario's blog",
+            "body": "So mario just wrote a blog for no apparent reason\nThe worst part about it all is that we have to laugh\nand pretend its funny",
+            "id": 1
+        },
+        {
+            "author": "Luigi",
+            "title": "Luigi's theisis",
+            "body": "Luigi is mario's brother or is he his friend,\nI really don't know I'm sure even he doesn't know these\nguys are trully dumb.",
+            "id": 2
+        }
+    ]
+}
