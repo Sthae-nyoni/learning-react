@@ -1,12 +1,13 @@
-import { useEffect } from "react";
+import { Link } from 'react-router-dom'
 
 function Blog({ blog, deleteBlog })
 {
     return (
         <div className="blog-preview">
-            <h2>Title: {blog.title}</h2>
-            <p>Written by: {blog.author}</p>
-            <button onClick={() => deleteBlog(blog.id)}>delete</button>
+            <Link to={`/blogs/${blog.id}`}>
+                <h2>Title: {blog.title}</h2>
+                <p>Written by: {blog.author}</p>
+            </Link>
         </div>
     );
 }
