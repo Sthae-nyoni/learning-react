@@ -1,10 +1,18 @@
-
+import useFetchService from "../../hooks/fetchservice";
+import Blog from "../blogs/Blog";
 
 function Home()
 {
+    const url = "http://localhost:8000/blogs";
+    const { data: blogs, pending, error_message } = useFetchService(url);
+
     return (
         <div className="home">
-            <h2>Homepage</h2>
+            <div className="blog-list">
+                {error_message && <div>{error_message}</div>}
+                {pending && <div>Loading...</div>}
+                {blogs && blogs.map(blog => <Blog blog={blog} key={blog.id} />)}
+            </div>
         </div>
     );
 }
