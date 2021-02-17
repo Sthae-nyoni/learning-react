@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-function Blog({ blog, deleteBlog })
+function BlogPreview({ blog, deleteBlog })
 {
     return (
         <div className="blog-preview">
@@ -12,5 +12,5 @@ function Blog({ blog, deleteBlog })
     );
 }
 
-export default Blog;
+export default BlogPreview;
 

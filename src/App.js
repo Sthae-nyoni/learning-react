@@ -2,8 +2,8 @@
 import Home from './components/home/Home';
 import Navbar from './components/nav/Navbar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import CreateBlog from './components/blogs/CreateBlog';
-import BlogDetails from './components/blogs/BlogDetails';
+import CreateBlogPage from './components/blog/CreateBlogPage';
+import BlogDetailsPage from './components/blog/BlogDetailsPage';
 
 function App()
 {
@@ -17,10 +17,10 @@ function App()
               <Home />
             </Route>
             <Route path="/create">
-              <CreateBlog />
+              <CreateBlogPage />
             </Route>
             <Route path="/blogs/:id">
-              <BlogDetails />
+              <BlogDetailsPage />
             </Route>
           </Switch>
         </div>

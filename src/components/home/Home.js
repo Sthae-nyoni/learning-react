@@ -1,5 +1,5 @@
 import useFetchService from "../../hooks/fetchservice";
-import Blog from "../blogs/Blog";
+import BlogPreview from "../blog/BlogPreview";
 
 function Home()
 {
@@ -11,7 +11,7 @@ function Home()
             <div className="blog-list">
                 {error_message && <div>{error_message}</div>}
                 {pending && <div>Loading...</div>}
-                {blogs && blogs.map(blog => <Blog blog={blog} key={blog.id} />)}
+                {blogs && blogs.map(blog => <BlogPreview blog={blog} key={blog.id} />)}
             </div>
         </div>
     );

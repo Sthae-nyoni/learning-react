@@ -1,8 +1,8 @@
-function CreateBlog()
+function CreateBlogPage()
 {
     return (
         <div>Create a new blog</div>
     );
 }
 
-export default CreateBlog;
+export default CreateBlogPage;
