@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 
-
-
 function useFetchService(url)
 {
     const [data, setData] = useState(null);
@@ -16,10 +14,14 @@ function useFetchService(url)
 
 function getBlogs(url, setters)
 {
-    setTimeout(() => fetch(url)
+    const abort_controller = new AbortController();
+
+    setTimeout(() => fetch(url, { signal: abort_controller.signal })
         .then(response => process(response))
         .then(data => updateOkStatus(data, setters))
-        .catch(error => updateErrorStatus(error, setters)), 1000);
+        .catch(error => updateErrorStatus(error, setters)), 800);
+
+    return () => abort_controller.abort();//clean up ...
 }
 
 
@@ -32,12 +34,15 @@ function process(response)
 
 function updateErrorStatus(error, [setData, setPending, setErrorMessage])
 {
+    if (error.name === 'AbortError')
+        return;
+
     setErrorMessage(error.message);
     setPending(false);
     setData(null);
 }
 
-function updateOkStatus(data,[setData, setPending, setErrorMessage])
+function updateOkStatus(data, [setData, setPending, setErrorMessage])
 {
     setData(data);
     setPending(false);
