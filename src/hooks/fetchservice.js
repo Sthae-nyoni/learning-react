@@ -36,7 +36,7 @@ function updateErrorStatus(error, [setData, setPending, setErrorMessage])
 {
     if (error.name === 'AbortError')
         return;
-
+        
     setErrorMessage(error.message);
     setPending(false);
     setData(null);
