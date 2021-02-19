@@ -1,16 +1,52 @@
 {
-    "blogs": [
-        {
-            "author": "Mario",
-            "title": "Mario's blog",
-            "body": "The console game created by the Japanese electronic game manufacturer Nintendo Company, Ltd., in 1985 for the Nintendo Entertainment System (NES). The game, which was based on the arcade game Mario Bros., helped launch one of gaming’s most popular franchises. It stars Mario and Luigi, two Italian plumbers who find themselves in the Mushroom Kingdom trying to rescue Princess Toadstool from the evil King Bowser. It is one of the best-selling game series, with more than 40 million copies sold.In the original Super Mario Bros., solo players pilot Mario, and an additional player can play as Luigi. The game is based on a series of side-scrolling levels, each filled with enemies ranging from mushroomlike Goombas to evil turtles known as Koopa Troopas. The levels take place in different settings, some in dungeons and some above ground, with fights against Bowser impersonators at the end of castle levels. Once the imposter is defeated, a Mushroom Kingdom resident informs Mario or Luigi that the princess is in another castle. The game is completed with the defeat of the true Bowser and the rescue of Princess Toadstool.Super Mario Bros. helped NES become a resounding success. The game inspired more than 10 direct game sequels; a television cartoon, The Super Mario Bros. Super Show! (1989); and a live action film, Super Mario Bros. (1993).",
-            "id": 1
-        },
-        {
-            "author": "Luigi",
-            "title": "Luigi's theisis",
-            "body": "The dynasty’s known history begins with the 14th century, when Luigi I (also called Ludovico; 1267–1360), after fierce struggles, supplanted his brother-in-law Rinaldo (nicknamed Passerino) Bonacolsi as lord of Mantua in August 1328, with the title of captain general and afterward of vicar-general of the empire, adding the designation of count of Mirandola and Concordia. In July 1335 his son Guido wrested Reggio from the Scaligeri, and the Gonzaga held it until 1371. Luigi was succeeded by Guido (d. 1369); the latter’s son Luigi II (or Ludovico II; d. 1382) came next in succession, and then Giovan Francesco I (sometimes referred to as Francesco I; d. 1407), who, although at one time allied with the treacherous Gian Galeazzo Visconti, incurred the latter’s enmity and all but lost his estates and his life in consequence; eventually he joined the Florentines and Bolognese, enemies of Visconti. He promoted commerce and wisely developed the prosperity of his dominions.His son Giovan Francesco II (Gianfrancesco; d. 1444), who succeeded him, became a famous general and was rewarded for his services to the Holy Roman emperor Sigismund with the title of marquess of Mantua for himself and his descendants (1432), an investiture that legitimatized the usurpations of the house of Gonzaga. Under Giovan Francesco II the first school inspired by humanistic principles was founded in 1423 in one of the family’s villas near Mantua by Vittorino de Feltre. Artists also found their way to Mantua, notably Andrea Mantegna and Leon Battista Alberti, and during the 15th century the capital city and its dependencies were embellished and transformed. Giovan Francesco’s son Luigi (or Ludovico) III “il Turco” (d. 1478) likewise became a celebrated soldier and a learned and liberal prince, a patron of literature and the arts.",
-            "id": 2
-        }
-    ]
+  "blogs": [
+    {
+      "author": "Mario",
+      "title": "Mario's blog",
+      "body": "The console game created by the Japanese electronic game manufacturer Nintendo Company, Ltd., in 1985 for the Nintendo Entertainment System (NES). The game, which was based on the arcade game Mario Bros., helped launch one of gaming’s most popular franchises. It stars Mario and Luigi, two Italian plumbers who find themselves in the Mushroom Kingdom trying to rescue Princess Toadstool from the evil King Bowser. It is one of the best-selling game series, with more than 40 million copies sold.In the original Super Mario Bros., solo players pilot Mario, and an additional player can play as Luigi. The game is based on a series of side-scrolling levels, each filled with enemies ranging from mushroomlike Goombas to evil turtles known as Koopa Troopas. The levels take place in different settings, some in dungeons and some above ground, with fights against Bowser impersonators at the end of castle levels. Once the imposter is defeated, a Mushroom Kingdom resident informs Mario or Luigi that the princess is in another castle. The game is completed with the defeat of the true Bowser and the rescue of Princess Toadstool.Super Mario Bros. helped NES become a resounding success. The game inspired more than 10 direct game sequels; a television cartoon, The Super Mario Bros. Super Show! (1989); and a live action film, Super Mario Bros. (1993).",
+      "id": 1
+    },
+    {
+      "author": "Luigi",
+      "title": "Luigi's theisis",
+      "body": "The dynasty’s known history begins with the 14th century, when Luigi I (also called Ludovico; 1267–1360), after fierce struggles, supplanted his brother-in-law Rinaldo (nicknamed Passerino) Bonacolsi as lord of Mantua in August 1328, with the title of captain general and afterward of vicar-general of the empire, adding the designation of count of Mirandola and Concordia. In July 1335 his son Guido wrested Reggio from the Scaligeri, and the Gonzaga held it until 1371. Luigi was succeeded by Guido (d. 1369); the latter’s son Luigi II (or Ludovico II; d. 1382) came next in succession, and then Giovan Francesco I (sometimes referred to as Francesco I; d. 1407), who, although at one time allied with the treacherous Gian Galeazzo Visconti, incurred the latter’s enmity and all but lost his estates and his life in consequence; eventually he joined the Florentines and Bolognese, enemies of Visconti. He promoted commerce and wisely developed the prosperity of his dominions.His son Giovan Francesco II (Gianfrancesco; d. 1444), who succeeded him, became a famous general and was rewarded for his services to the Holy Roman emperor Sigismund with the title of marquess of Mantua for himself and his descendants (1432), an investiture that legitimatized the usurpations of the house of Gonzaga. Under Giovan Francesco II the first school inspired by humanistic principles was founded in 1423 in one of the family’s villas near Mantua by Vittorino de Feltre. Artists also found their way to Mantua, notably Andrea Mantegna and Leon Battista Alberti, and during the 15th century the capital city and its dependencies were embellished and transformed. Giovan Francesco’s son Luigi (or Ludovico) III “il Turco” (d. 1478) likewise became a celebrated soldier and a learned and liberal prince, a patron of literature and the arts.",
+      "id": 2
+    },
+    {
+      "title": "The blog",
+      "author": "luigi",
+      "body": "The blog has some body you definetly have to read more about it lollest.",
+      "id": 3
+    },
+    {
+      "title": "useless blog",
+      "author": "mario",
+      "body": "very useless blog i will delete it soon trust me",
+      "id": 4
+    },
+    {
+      "title": "another one",
+      "author": "luigi",
+      "body": "so sorry these will go soon",
+      "id": 5
+    },
+    {
+      "title": "another one",
+      "author": "luigi",
+      "body": "so sorry these will go soon",
+      "id": 6
+    },
+    {
+      "title": "another one",
+      "author": "luigi",
+      "body": "so sorry these will go soon ssss",
+      "id": 7
+    },
+    {
+      "title": "the blog oh yeah",
+      "author": "mario",
+      "body": "The title is silly so is the blog dont expect much really",
+      "id": 8
+    }
+  ]
 }
