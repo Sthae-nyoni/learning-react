@@ -5,6 +5,11 @@ let post_meta_data =
     body: null
 }
 
+const delete_meta_data =
+{
+    method: 'DELETE'
+}
+
 function postData(url, post_event, data, history)
 {
     post_event.preventDefault();
@@ -13,4 +18,11 @@ function postData(url, post_event, data, history)
         .then(() => history.push('/'));
 }
 
-export default postData;
+
+function deleteData(url, history)
+{
+    fetch(url, delete_meta_data)
+        .then(() => history.push('/'));
+}
+
+export  { postData, deleteData };

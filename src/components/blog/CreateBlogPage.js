@@ -1,5 +1,5 @@
 import { useState } from "react";
-import postData from "../../util/postservice"
+import { postData } from "../../util/http"
 import { useHistory } from "react-router-dom";
 
 const TITLE = 'Title';
@@ -34,8 +34,8 @@ function InputField({ description, variable, updateInput })
             <label>{description}</label>
             {
                 description === 'Title' ?
-                    <input value={variable} onChange={e => updateInput(e.target.value)} /> :
-                    <textarea placeholder="Body" value={variable} onChange={e => updateInput(e.target.value)} />
+                    <input required value={variable} onChange={e => updateInput(e.target.value)} /> :
+                    <textarea required placeholder="Body" value={variable} onChange={e => updateInput(e.target.value)} />
             }
         </div>
     );
