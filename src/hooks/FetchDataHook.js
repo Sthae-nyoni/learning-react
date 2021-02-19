@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function useFetchService(url)
+function useFetchOnInitialRender(url)
 {
     const [data, setData] = useState(null);
     const [pending, setPending] = useState(true);
@@ -49,4 +49,4 @@ function updateOkStatus(data, [setData, setPending, setErrorMessage])
     setErrorMessage(null);
 }
 
-export default useFetchService;
+export default useFetchOnInitialRender;

@@ -1,10 +1,10 @@
-import useFetchService from "../../hooks/fetchservice";
+import useFetchOnInitialRender from "../../hooks/FetchDataHook";
 import BlogPreview from "../blog/BlogPreview";
 
 function Home()
 {
     const url = "http://localhost:8000/blogs";
-    const { data: blogs, pending, error_message } = useFetchService(url);
+    const { data: blogs, pending, error_message } = useFetchOnInitialRender(url);
 
     return (
         <div className="home">

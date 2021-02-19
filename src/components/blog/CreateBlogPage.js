@@ -1,5 +1,5 @@
 import { useState } from "react";
-import postData from "../../hooks/postservice";
+import postData from "../../util/postservice"
 import { useHistory } from "react-router-dom";
 
 const TITLE = 'Title';

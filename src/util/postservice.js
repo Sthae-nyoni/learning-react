@@ -1,6 +1,3 @@
-import { useHistory } from "react-router-dom";
-
-
 let post_meta_data =
 {
     method: 'POST',

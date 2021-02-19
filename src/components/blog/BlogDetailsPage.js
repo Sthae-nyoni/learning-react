@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
-import useFetchService from "../../hooks/fetchservice";
+import useFetchOnInitialRender from "../../hooks/FetchDataHook";
 
 function BlogDetailsPage()
 {
     const { id } = useParams();
     const url = `http://localhost:8000/blogs/${id}`;
-    const { data: blog, pending, error_message } = useFetchService(url);
+    const { data: blog, pending, error_message } = useFetchOnInitialRender(url);
 
     return (
         <div className="blog-details">
