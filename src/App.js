@@ -4,6 +4,7 @@ import Navbar from './components/nav/Navbar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import CreateBlogPage from './components/blog/CreateBlogPage';
 import BlogDetailsPage from './components/blog/BlogDetailsPage';
+import NotFound from './components/error/NotFound';
 
 function App()
 {
@@ -21,6 +22,9 @@ function App()
             </Route>
             <Route path="/blogs/:id">
               <BlogDetailsPage />
+            </Route>
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </div>
