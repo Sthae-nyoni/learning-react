@@ -1,6 +1,13 @@
+import React from 'react';
 import { Link } from 'react-router-dom'
+import { Blog } from '../../util/models'
 
-function BlogPreview({ blog, deleteBlog })
+interface BlogPreviewProps
+{
+    blog: Blog;
+}
+
+function BlogPreview({ blog }: BlogPreviewProps)
 {
     return (
         <div className="blog-preview">

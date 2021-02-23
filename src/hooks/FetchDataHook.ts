@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { ResponseData } from "../util/models";
 
-function useFetchOnInitialRender(url)
+
+function useGetDataOnInitialRender<T>(url: string): ResponseData<T | null>
 {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState<T | null>(null);
     const [pending, setPending] = useState(true);
-    const [error_message, setErrorMessage] = useState(null);
+    const [error_message, setErrorMessage] = useState<string>('');
 
     const setters = [setData, setPending, setErrorMessage];
 
@@ -14,12 +16,11 @@ function useFetchOnInitialRender(url)
 }
 
 
-function getData(url, setters)
+function getData<T>(url: string, setters: React.Dispatch<React.SetStateAction<any>>[])
 {
     const abort_controller = new AbortController();
-
     setTimeout(() => fetch(url, { signal: abort_controller.signal })
-        .then(response => process(response))
+        .then(response => process<T>(response))
         .then(data => updateOkStatus(data, setters))
         .catch(error => updateErrorStatus(error, setters)), 800);
 
@@ -35,28 +36,27 @@ function getData(url, setters)
 }
 
 
-function process(response)
+function process<T>(response: Response): Promise<T>
 {
     if (!response.ok)
         throw Error("That endpoint does not exist");
     return response.json();
 }
 
-function updateErrorStatus(error, [setData, setPending, setErrorMessage])
+function updateErrorStatus(error: Error, [setData, setPending, setErrorMessage]: React.Dispatch<React.SetStateAction<any>>[])
 {
     if (error.name === 'AbortError')
         return;
-
     setErrorMessage(error.message);
     setPending(false);
     setData(null);
 }
 
-function updateOkStatus(data, [setData, setPending, setErrorMessage])
+function updateOkStatus<T>(data: T, [setData, setPending, setErrorMessage]: React.Dispatch<React.SetStateAction<any>>[])
 {
     setData(data);
     setPending(false);
     setErrorMessage(null);
 }
 
-export default useFetchOnInitialRender;
+export default useGetDataOnInitialRender;

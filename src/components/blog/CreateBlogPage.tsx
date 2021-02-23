@@ -1,9 +1,24 @@
+import React from 'react';
 import { useState } from "react";
 import { postData } from "../../util/http"
 import { useHistory } from "react-router-dom";
 
 const TITLE = 'Title';
 const BODY = 'Body';
+
+
+interface InputFieldProps
+{
+    description: string;
+    variable: string;
+    updateVariable: React.Dispatch<React.SetStateAction<string>>;
+}
+
+interface BlogAuthorProps
+{
+    author: string;
+    setAuthor: React.Dispatch<React.SetStateAction<string>>;
+}
 
 function CreateBlogPage()
 {
@@ -14,12 +29,14 @@ function CreateBlogPage()
     const blog = { title, author, body };
     const history = useHistory();
 
+    const redirectFunction = () =>history.push('/');
+
     return (
         <div className="create-blog">
             <h2>Add a new blog below</h2>
-            <form onSubmit={event => postData(url, event, blog, history)} >
-                <InputField description={TITLE} variable={title} updateInput={setTitle} />
-                <InputField description={BODY} variable={body} updateInput={setBody} />
+            <form onSubmit={event => postData(url, event, blog, redirectFunction)} >
+                <InputField description={TITLE} variable={title} updateVariable={setTitle} />
+                <InputField description={BODY} variable={body} updateVariable={setBody} />
                 <BlogAuthor author={author} setAuthor={setAuthor} />
                 <button>Add Blog</button>
             </form>
@@ -27,22 +44,22 @@ function CreateBlogPage()
     );
 }
 
-function InputField({ description, variable, updateInput })
+function InputField({ description, variable, updateVariable }: InputFieldProps)
 {
     return (
         <div>
             <label>{description}</label>
             {
                 description === 'Title' ?
-                    <input required value={variable} onChange={e => updateInput(e.target.value)} /> :
-                    <textarea required placeholder="Body" value={variable} onChange={e => updateInput(e.target.value)} />
+                    <input required value={variable} onChange={e => updateVariable(e.target.value)} /> :
+                    <textarea required placeholder="Body" value={variable} onChange={e => updateVariable(e.target.value)} />
             }
         </div>
     );
 }
 
 
-function BlogAuthor({ author, setAuthor })
+function BlogAuthor({ author, setAuthor }: BlogAuthorProps)
 {
     return (
         <div>

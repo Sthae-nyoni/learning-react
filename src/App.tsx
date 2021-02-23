@@ -1,10 +1,11 @@
 
-import Home from './components/home/Home';
-import Navbar from './components/nav/Navbar';
+import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import CreateBlogPage from './components/blog/CreateBlogPage';
 import BlogDetailsPage from './components/blog/BlogDetailsPage';
 import NotFound from './components/error/NotFound';
+import Home from './components/home/Home';
+import Navbar from './components/nav/Navbar';
 
 function App()
 {

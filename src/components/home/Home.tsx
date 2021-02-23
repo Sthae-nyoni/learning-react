@@ -1,10 +1,12 @@
-import useFetchOnInitialRender from "../../hooks/FetchDataHook";
+import React from 'react';
+import useGetDataInitialRender from "../../hooks/FetchDataHook";
 import BlogPreview from "../blog/BlogPreview";
+import { Blog } from '../../util/models';
 
 function Home()
 {
     const url = "http://localhost:8000/blogs";
-    const { data: blogs, pending, error_message } = useFetchOnInitialRender(url);
+     const { data: blogs, pending, error_message } = useGetDataInitialRender<Blog[]>(url);
 
     return (
         <div className="home">

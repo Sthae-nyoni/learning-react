@@ -1,13 +1,27 @@
+import React from 'react';
 import { useParams, useHistory } from "react-router-dom";
-import useFetchOnInitialRender from "../../hooks/FetchDataHook";
+import useGetDataOnInitialRender from "../../hooks/FetchDataHook";
 import { deleteData } from "../../util/http"
+import type { Blog } from '../../util/models';
+
+interface Url
+{
+    id?: string;
+}
+
+interface ArticleBodyProps
+{
+    article_details: Blog;
+}
 
 function BlogDetailsPage()
 {
-    const { id } = useParams();
+    const { id } = useParams<Url>();
     const url = `http://localhost:8000/blogs/${id}`;
-    const { data: blog, pending, error_message } = useFetchOnInitialRender(url);
+    const { data: blog, pending, error_message } = useGetDataOnInitialRender<Blog>(url);
     const history = useHistory();
+
+    const redirectFunction = () => history.push('/');
 
     return (
         <div className="blog-details">
@@ -17,7 +31,7 @@ function BlogDetailsPage()
                 blog &&
                 <div>
                     <ArticleBody article_details={blog} />
-                    <button onClick={() => deleteData(url, history)}>delete</button>
+                    <button onClick={() => deleteData(url, redirectFunction)}>delete</button>
                 </div>
             }
         </div>
@@ -25,7 +39,7 @@ function BlogDetailsPage()
 }
 
 
-function ArticleBody({ article_details })
+function ArticleBody({ article_details }: ArticleBodyProps)
 {
     return (
         <div>
